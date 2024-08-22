@@ -13,7 +13,7 @@
         }}</span>
       </div>
       <div class="d-flex flex-column align-items-center card-active mb-3">
-        <span class="card-title">Nº cotas em ações</span>
+        <span class="card-title">Nº cotas em Ações</span>
         <span>{{ actives.amountAction }}</span>
       </div>
       <div class="d-flex flex-column align-items-center card-active mb-3">
