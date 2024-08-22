@@ -2,13 +2,13 @@
   <main class="container-fluid px-4 mt-5">
     <h2>Minha carteira</h2>
     <div class="d-flex flex-wrap mb-5">
-      <div v-if="seriesGeral.length > 0" class="col-12 col-sm-12 col-md-12 col-lg-6 mt-3">
+      <div v-if="seriesGeral.length > 0" class="col-12 col-sm-12 col-md-12 col-lg-4 mt-3">
         <apexchart type="donut" :options="chartOptionsGeral" :series="seriesGeral" />
       </div>
-      <div v-if="seriesActions.length > 0" class="col-12 col-sm-12 col-md-12 col-lg-6 mt-3">
+      <div v-if="seriesActions.length > 0" class="col-12 col-sm-12 col-md-12 col-lg-4 mt-3">
         <apexchart type="donut" :options="chartOptionsActions" :series="seriesActions" />
       </div>
-      <div v-if="seriesFunds.length > 0" class="col-12 col-sm-12 col-md-12 col-lg-6 mt-3">
+      <div v-if="seriesFunds.length > 0" class="col-12 col-sm-12 col-md-12 col-lg-4 mt-3">
         <apexchart type="donut" :options="chartOptionsFunds" :series="seriesFunds" />
       </div>
     </div>
