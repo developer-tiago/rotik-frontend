@@ -185,7 +185,7 @@ export default {
           curve: 'straight'
         },
         title: {
-          text: 'Evolução Fundos imobiliários',
+          text: 'Evolução Ações',
           align: 'center'
         },
         grid: {
