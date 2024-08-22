@@ -298,8 +298,7 @@ button {
   }
 
   .btn-sell {
-    background: #ff2b2b;
-    color: #fff;
+    background: rgb(255, 183, 183);;
 
     span {
       line-height: 1;
@@ -308,7 +307,7 @@ button {
   }
 
   .btn-pay {
-    background: #5bcc8a;
+    background: rgb(183, 255, 183);
 
     span {
       line-height: 1;
