@@ -104,6 +104,11 @@ export default {
       const regex = /^\d+$/
       const onlyNumber = regex.test(this.amount)
 
+      if (this.amount == 0) {
+        this.messageError = 'Valor inválido'
+        return true
+      }
+
       if (!onlyNumber) {
         this.messageError = 'Valor inválido'
         return true
