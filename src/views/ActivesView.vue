@@ -8,7 +8,17 @@
     <h2>Ações e Fundos imobiliários</h2>
 
     <div class="d-flex align-items-center mb-5">
-      <input type="text" placeholder="Digite o Nome ou Ticker do ativo" v-model="activeFilter" />
+      <div>
+        <input
+          type="text"
+          placeholder="Digite o Nome ou Ticker do ativo"
+          v-model="activeFilter"
+          @input="validator = null"
+        />
+        <div v-if="validator === false" class="invalid-field ps-2">
+          <span>Informe um nome ou ticker válido</span>
+        </div>
+      </div>
       <button class="ms-3 search-button" title="Buscar ativo" @click="searchActive">
         <i class="ri-search-line"></i>
       </button>
@@ -115,6 +125,11 @@
         </ul>
       </nav>
     </template>
+    <template v-else>
+      <div class="text-center">
+        <span>Ativo não encontrado.</span>
+      </div>
+    </template>
   </main>
 
   <ModalConfirmTransaction :active="actionSelected" @transactionCreated="transactionCreated" />
@@ -137,6 +152,7 @@ export default {
   data() {
     return {
       actives: [],
+      validator: null,
       actionSelected: null,
       activeFilter: '',
       transactions: [],
@@ -161,6 +177,13 @@ export default {
         pages.push(i)
       }
       return pages
+    }
+  },
+  watch: {
+    activeFilter(value) {
+      if (value.length == 0) {
+        this.loadActives('/actives?page=1')
+      }
     }
   },
   mounted() {
@@ -214,6 +237,11 @@ export default {
     },
 
     searchActive() {
+      if (this.activeFilter == '') {
+        this.validator = false
+        return
+      }
+
       ActiveService.getActiveByNameOrTicker(this.activeFilter)
         .then((response) => {
           this.actives = response.data
@@ -298,7 +326,7 @@ button {
   }
 
   .btn-sell {
-    background: rgb(255, 183, 183);;
+    background: rgb(255, 183, 183);
 
     span {
       line-height: 1;
@@ -340,5 +368,10 @@ button {
   color: initial;
   box-shadow: none;
   outline: none;
+}
+
+.invalid-field {
+  color: red;
+  font-size: 12px;
 }
 </style>
