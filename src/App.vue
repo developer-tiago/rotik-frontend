@@ -1,6 +1,6 @@
 <template>
   <header v-if="auth.isAuthenticated">
-    <RouterLink to="/dashboard" title="Dashboard" class="me-2">
+    <RouterLink to="/" title="Dashboard" class="me-2">
       <i class="ri-home-line"></i>
     </RouterLink>
     <span>Olá, {{ auth.userLogged.name }}</span>

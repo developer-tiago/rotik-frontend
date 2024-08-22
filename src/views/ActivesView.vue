@@ -5,8 +5,7 @@
         {{ messageAlert }}
       </div>
     </div>
-
-    <h1>Ações e Fundos imobiliários</h1>
+    <h2>Ações e Fundos imobiliários</h2>
 
     <div class="d-flex align-items-center mb-5">
       <input type="text" placeholder="Digite o Nome ou Ticker do ativo" v-model="activeFilter" />
@@ -300,7 +299,7 @@ button {
 
   .btn-sell {
     background: #ff2b2b;
-    color: #FFF;
+    color: #fff;
 
     span {
       line-height: 1;

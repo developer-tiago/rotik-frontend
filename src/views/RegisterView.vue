@@ -66,9 +66,7 @@ async function register() {
       router.push({ name: 'login' })
     })
     .catch((error) => {
-      console.log('aqui')
       if (error.response.data.error == 'Email already exist') {
-        console.log('aqui')
         validator.messageErrorEmail = 'E-mail já esta sendo utilizado'
         validator.email = false
       }
@@ -79,21 +77,17 @@ function checkFields() {
   let invalidField = false
 
   if (user.name.length < 3) {
-    console.log('Nome inválido')
     validator.name = false
-    console.log(validator.name)
     invalidField = true
   }
 
   if (!validateEmail(user.email)) {
-    console.log('E-mail inválido')
     validator.messageErrorEmail = 'Informe um e-mail válido'
     validator.email = false
     invalidField = true
   }
 
   if (user.password.length < 6) {
-    console.log('Senha menor que 6 caracteres')
     validator.password = false
     invalidField = true
   }

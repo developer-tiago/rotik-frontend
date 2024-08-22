@@ -1,6 +1,6 @@
 <template>
   <main class="container-fluid px-4 mt-5">
-    <h1>Histórico de transações</h1>
+    <h2>Histórico de transações</h2>
 
     <div class="d-flex mb-4">
       <label for="category" class="d-flex flex-column me-3"
